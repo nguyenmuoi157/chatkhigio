@@ -18,44 +18,56 @@ const styles = StyleSheet.create({
 	}
 });
 
-@connect(state => ({
-	connecting: state.meteor.connecting,
-	authenticating: state.login.isFetching,
-	offline: !state.meteor.connected
-}))
+// @connect(state => ({
+// 	connecting: state.meteor.connecting,
+// 	authenticating: state.login.isFetching,
+// 	offline: !state.meteor.connected
+// }))
 
-export default class Banner extends React.PureComponent {
-	static propTypes = {
-		connecting: PropTypes.bool,
-		authenticating: PropTypes.bool,
-		offline: PropTypes.bool
-	}
-	render() {
-		const { connecting, authenticating, offline } = this.props;
 
-		if (offline) {
-			return (
-				<View style={[styles.bannerContainer, { backgroundColor: 'red' }]}>
-					<Text style={[styles.bannerText, { color: '#a00' }]}>offline...</Text>
-				</View>
-			);
-		}
-		if (connecting) {
-			return (
-				<View style={[styles.bannerContainer, { backgroundColor: '#0d0' }]}>
-					<Text style={[styles.bannerText, { color: '#fff' }]}>Connecting...</Text>
-				</View>
-			);
-		}
-
-		if (authenticating) {
-			return (
-				<View style={[styles.bannerContainer, { backgroundColor: 'orange' }]}>
-					<Text style={[styles.bannerText, { color: '#a00' }]}>Authenticating...</Text>
-				</View>
-			);
-		}
-
-		return null;
+export default class Banner extends React.PureComponent{
+	render(){
+		return(
+			<View>
+				<Text>
+				Avatar
+				</Text>
+			</View>
+		)
 	}
 }
+// export default class Banner extends React.PureComponent {
+// 	static propTypes = {
+// 		connecting: PropTypes.bool,
+// 		authenticating: PropTypes.bool,
+// 		offline: PropTypes.bool
+// 	}
+// 	render() {
+// 		const { connecting, authenticating, offline } = this.props;
+
+// 		if (offline) {
+// 			return (
+// 				<View style={[styles.bannerContainer, { backgroundColor: 'red' }]}>
+// 					<Text style={[styles.bannerText, { color: '#a00' }]}>offline...</Text>
+// 				</View>
+// 			);
+// 		}
+// 		if (connecting) {
+// 			return (
+// 				<View style={[styles.bannerContainer, { backgroundColor: '#0d0' }]}>
+// 					<Text style={[styles.bannerText, { color: '#fff' }]}>Connecting...</Text>
+// 				</View>
+// 			);
+// 		}
+
+// 		if (authenticating) {
+// 			return (
+// 				<View style={[styles.bannerContainer, { backgroundColor: 'orange' }]}>
+// 					<Text style={[styles.bannerText, { color: '#a00' }]}>Authenticating...</Text>
+// 				</View>
+// 			);
+// 		}
+
+// 		return null;
+// 	}
+// }

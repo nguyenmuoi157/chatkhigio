@@ -21,6 +21,20 @@ import Emoji from './Emoji';
 import messageStatus from '../../constants/messagesStatus';
 import styles from './styles';
 
+
+export default class Avatar extends React.PureComponent{
+	render(){
+		return(
+			<View>
+				<Text>
+				Avatar
+				</Text>
+			</View>
+		)
+	}
+}
+
+
 @connect(state => ({
 	message: state.messages.message,
 	editing: state.messages.editing,
